@@ -11,9 +11,7 @@ namespace UdpReceiver
     {
         static void Main(string[] args)
         {
-            int port;
-            string groupAddress;
-            if (!ParseCommandLine(args, out port, out groupAddress))
+            if (!ParseCommandLine(args, out int port, out string groupAddress))
             {
                 ShowUsage();
                 return;
@@ -22,10 +20,8 @@ namespace UdpReceiver
             ReadLine();
         }
 
-        private static void ShowUsage()
-        {
+        private static void ShowUsage() =>
             WriteLine("Usage: UdpReceiver -p port  [-g groupaddress]");
-        }
 
         private static bool ParseCommandLine(string[] args, out int port, out string groupAddress)
         {
@@ -64,8 +60,6 @@ namespace UdpReceiver
             return args[nextIndex.Value];
         }
 
-
-
         private static async Task ReaderAsync(int port, string groupAddress)
         {
             using (var client = new UdpClient(port))
@@ -97,7 +91,5 @@ namespace UdpReceiver
                 }
             }
         }
-
-
     }
 }

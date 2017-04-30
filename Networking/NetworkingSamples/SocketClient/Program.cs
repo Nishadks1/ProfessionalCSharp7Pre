@@ -32,10 +32,8 @@ namespace SocketClient
             ReadLine();
         }
 
-        private static void ShowUsage()
-        {
+        private static void ShowUsage() =>
             WriteLine("Usage: SocketClient server port");
-        }
 
         public static async Task SendAndReceive(string hostName, int port)
         {
@@ -59,7 +57,6 @@ namespace SocketClient
                     Task tSender = Sender(stream, cts);
                     Task tReceiver = Receiver(stream, cts.Token);
                     await Task.WhenAll(tSender, tReceiver);
-
                 }
             }
             catch (SocketException ex)

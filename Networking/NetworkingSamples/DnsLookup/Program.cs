@@ -27,7 +27,6 @@ namespace DnsLookup
         {
             try
             {
-
                 IPHostEntry ipHost = await Dns.GetHostEntryAsync(hostname);
              
                 WriteLine($"Hostname: {ipHost.HostName}");

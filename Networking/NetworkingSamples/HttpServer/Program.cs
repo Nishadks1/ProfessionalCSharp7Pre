@@ -23,20 +23,17 @@ namespace HttpServer
             ReadLine();
         }
 
-        private static void ShowUsage()
-        {
+        private static void ShowUsage() =>
             WriteLine("Usage: HttpServer Prefix [Prefix2] [Prefix3] [Prefix4]");
-        }
 
-        private static string htmlFormat =
+        private static string s_htmlFormat =
             "<!DOCTYPE html><html><head><title>{0}</title></head>" +
             "<body>{1}</body></html>";
 
         public static async Task StartServerAsync(params string[] prefixes)
         {
             try
-            {
-             
+            {             
                 WriteLine($"server starting at");
                 var listener = new WebListener();
               
@@ -78,7 +75,7 @@ namespace HttpServer
             sb.Append("<h2>Request Object Information</h2>");
             sb.Append(string.Join(" ", GetRequestInfo(request)));
         
-            string html = string.Format(htmlFormat, title, sb.ToString());
+            string html = string.Format(s_htmlFormat, title, sb.ToString());
             return Encoding.UTF8.GetBytes(html);
         }
 

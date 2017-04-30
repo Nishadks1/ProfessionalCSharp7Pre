@@ -11,8 +11,8 @@ namespace TcpClientSample
 {
     class Program
     {
-        private const string host = "localhost";
-        private const int port = 8000;
+        private const string Host = "localhost";
+        private const int Port = 8000;
 
         static void Main()
         {
@@ -24,7 +24,7 @@ namespace TcpClientSample
         {
             using (var client = new TcpClient())
             {
-                await client.ConnectAsync(host, port);
+                await client.ConnectAsync(Host, Port);
                 using (NetworkStream stream = client.GetStream())
                 using (var writer = new StreamWriter(stream, Encoding.ASCII, 1024, leaveOpen: true))
                 using (var reader = new StreamReader(stream, Encoding.ASCII, true, 1024, leaveOpen: true))

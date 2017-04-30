@@ -12,12 +12,7 @@ namespace UdpSender
     {
         static void Main(string[] args)
         {
-            int port;
-            string hostname;
-            bool broadcast;
-            string groupAddress;
-            bool ipv6;
-            if (!ParseCommandLine(args, out port, out hostname, out broadcast, out groupAddress, out ipv6))
+            if (!ParseCommandLine(args, out int port, out string hostname, out bool broadcast, out string groupAddress, out bool ipv6))
             {
                 ShowUsage();
                 ReadLine();
@@ -95,7 +90,6 @@ namespace UdpSender
             IPEndPoint endpoint = null;
             try
             {
-
                 if (broadcast)
                 {
                     endpoint = new IPEndPoint(IPAddress.Broadcast, port);
@@ -137,7 +131,6 @@ namespace UdpSender
             return endpoint;
         }
 
-
         private static async Task Sender(IPEndPoint endpoint, bool broadcast, string groupAddress)
         {
             try
@@ -167,14 +160,12 @@ namespace UdpSender
                     {
                         client.DropMulticastGroup(IPAddress.Parse(groupAddress));
                     }
-
                 }
             }
             catch (SocketException ex)
             {
                 WriteLine(ex.Message);
             }
-
         }
     }
 }

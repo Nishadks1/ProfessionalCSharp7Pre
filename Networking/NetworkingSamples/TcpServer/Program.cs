@@ -11,10 +11,9 @@ namespace TcpServer
 {
     class Program
     {
-        private const int portNumber = 8800;
-        private SessionManager _sessionManager = new SessionManager();
-        private CommandActions _commandActions = new CommandActions();
-
+        private const int PortNumber = 8800;
+        private readonly SessionManager _sessionManager = new SessionManager();
+        private readonly CommandActions _commandActions = new CommandActions();
 
         private enum ParseResponse
         {
@@ -23,8 +22,6 @@ namespace TcpServer
             ERROR,
             TIMEOUT
         }
-
-
 
         static void Main()
         {
@@ -40,13 +37,12 @@ namespace TcpServer
             }
         }
 
-
         public async Task RunServerAsync()
         {
             try
             {
-                var listener = new TcpListener(IPAddress.Any, portNumber);
-                WriteLine($"listener started at port {portNumber}");
+                var listener = new TcpListener(IPAddress.Any, PortNumber);
+                WriteLine($"listener started at port {PortNumber}");
                 listener.Start();
 
                 while (true)
@@ -72,7 +68,6 @@ namespace TcpServer
                     {
                         WriteLine("client connected");
 
-
                         using (NetworkStream stream = client.GetStream())
                         {
                             bool completed = false;
@@ -84,12 +79,10 @@ namespace TcpServer
                                 string request = Encoding.ASCII.GetString(readBuffer, 0, read);
                                 WriteLine($"received {request}");
 
-                                string sessionId;
-                                string result;
                                 byte[] writeBuffer = null;
                                 string response = string.Empty;
 
-                                ParseResponse resp = ParseRequest(request, out sessionId, out result);
+                                ParseResponse resp = ParseRequest(request, out string sessionId, out string result);
                                 switch (resp)
                                 {
                                     case ParseResponse.OK:
@@ -114,10 +107,7 @@ namespace TcpServer
                                 await stream.WriteAsync(writeBuffer, 0, writeBuffer.Length);
                                 await stream.FlushAsync();
                                 WriteLine($"returned {Encoding.ASCII.GetString(writeBuffer, 0, writeBuffer.Length)}");
-
-
                             } while (!completed);
-
                         }
                     }
                 }
@@ -134,7 +124,6 @@ namespace TcpServer
             sessionId = string.Empty;
             response = string.Empty;
             string[] requestColl = request.Split(new string[] { SEPARATOR }, StringSplitOptions.RemoveEmptyEntries);
-
 
             if (requestColl[0] == COMMANDHELO)  // first request
             {
@@ -198,15 +187,7 @@ namespace TcpServer
             return response;
         }
 
-
-        private void TimerSessionCleanup(object o)
-        {
+        private void TimerSessionCleanup(object o) =>
             _sessionManager.CleanupAllSessions();
-        }
-
-
-
     }
-
-
 }

@@ -28,10 +28,8 @@ namespace SocketServer
             ReadLine();
         }
 
-        private static void ShowUsage()
-        {
+        private static void ShowUsage() =>
             WriteLine("SocketServer port");
-        }
 
         public static void Listener(int port)
         {
@@ -45,7 +43,6 @@ namespace SocketServer
             WriteLine($"listener started on port {port}");
 
             var cts = new CancellationTokenSource();
-
 
             var tf = new TaskFactory(TaskCreationOptions.LongRunning, TaskContinuationOptions.None);
             tf.StartNew(() =>  // listener task

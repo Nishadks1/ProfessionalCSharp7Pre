@@ -135,7 +135,6 @@ namespace HttpClientSample
                     WriteLine($"Received payload of {responseBodyAsText.Length} characters");
                     WriteLine();
                     WriteLine(responseBodyAsText);
-
                 }
             }
             catch (Exception ex)
@@ -174,7 +173,6 @@ namespace HttpClientSample
                     WriteLine($"Received payload of {responseBodyAsText.Length} characters");
                     WriteLine();
                     WriteLine(responseBodyAsText);
-
                 }
             }
             catch (Exception ex)

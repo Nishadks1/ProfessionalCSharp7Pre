@@ -20,10 +20,8 @@ namespace HttpClientUsingTcp
             ReadLine();
         }
 
-        private static void ShowUsage()
-        {
+        private static void ShowUsage() =>
             WriteLine("Usage: HttpClientUsingTcp hostname");
-        }
 
         private const int ReadBufferSize = 1024;
         public static async Task<string> RequestHtmlAsync(string hostname)
