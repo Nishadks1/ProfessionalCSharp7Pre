@@ -1,6 +1,5 @@
 ﻿using System;
 using System.Collections.Generic;
-using static System.Console;
 
 namespace Wrox.ProCSharp.Delegates
 {
@@ -18,13 +17,13 @@ namespace Wrox.ProCSharp.Delegates
     static void SimpleDemos()
     {
       Func<string, string> oneParam = s => $"change uppercase {s.ToUpper()}";
-      WriteLine(oneParam("test"));
+      Console.WriteLine(oneParam("test"));
 
       Func<double, double, double> twoParams = (x, y) => x * y;
-      WriteLine(twoParams(3, 2));
+      Console.WriteLine(twoParams(3, 2));
 
       Func<double, double, double> twoParamsWithTypes = (double x, double y) => x * y;
-      WriteLine(twoParamsWithTypes(4, 2));
+      Console.WriteLine(twoParamsWithTypes(4, 2));
 
       Func<double, double> operations = x => x * 2;
       operations += x => x * x;
@@ -32,14 +31,13 @@ namespace Wrox.ProCSharp.Delegates
       ProcessAndDisplayNumber(operations, 2.0);
       ProcessAndDisplayNumber(operations, 7.94);
       ProcessAndDisplayNumber(operations, 1.414);
-      WriteLine();
+      Console.WriteLine();
     }
 
     static void ProcessAndDisplayNumber(Func<double, double> action, double value)
     {
       double result = action(value);
-      WriteLine($"Value is {value}, result of operation is {result}");
-
+      Console.WriteLine($"Value is {value}, result of operation is {result}");
     }
 
     static void Closure1()
@@ -52,7 +50,6 @@ namespace Wrox.ProCSharp.Delegates
       Console.WriteLine(f(3));
     }
 
-
     static void ClosureForEach()
     {
       var values = new List<int>() { 10, 20, 30 };
@@ -63,9 +60,8 @@ namespace Wrox.ProCSharp.Delegates
       }
       foreach (var f in funcs)
       {
-        WriteLine((f()));
+        Console.WriteLine((f()));
       }
-
     }
   }
 }

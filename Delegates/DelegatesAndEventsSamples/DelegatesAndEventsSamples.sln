@@ -1,7 +1,7 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 15
-VisualStudioVersion = 15.0.26206.0
+VisualStudioVersion = 15.0.26424.2
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SimpleDelegates", "SimpleDelegates\SimpleDelegates.csproj", "{FB7D9461-3072-40E8-AC39-3125FCE8F73C}"
 EndProject
@@ -16,8 +16,6 @@ EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "GetAStringDemo", "GetAStringDemo\GetAStringDemo.csproj", "{5743215F-666E-4DF4-9B45-4198DC981C6C}"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MulticastDelegates", "MulticastDelegates\MulticastDelegates.csproj", "{21337C8B-88CC-4407-AAA6-9EF75C6AFEA6}"
-EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WeakEvents", "WeakEvents\WeakEvents.csproj", "{E4C77416-FC0B-4AB4-B3D9-E00F60CA50AE}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -53,10 +51,6 @@ Global
 		{21337C8B-88CC-4407-AAA6-9EF75C6AFEA6}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{21337C8B-88CC-4407-AAA6-9EF75C6AFEA6}.Release|Any CPU.ActiveCfg = Debug|Any CPU
 		{21337C8B-88CC-4407-AAA6-9EF75C6AFEA6}.Release|Any CPU.Build.0 = Debug|Any CPU
-		{E4C77416-FC0B-4AB4-B3D9-E00F60CA50AE}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{E4C77416-FC0B-4AB4-B3D9-E00F60CA50AE}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{E4C77416-FC0B-4AB4-B3D9-E00F60CA50AE}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{E4C77416-FC0B-4AB4-B3D9-E00F60CA50AE}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

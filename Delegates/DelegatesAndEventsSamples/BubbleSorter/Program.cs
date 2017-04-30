@@ -1,4 +1,4 @@
-﻿using static System.Console;
+﻿using System;
 
 namespace Wrox.ProCSharp.Delegates
 {
@@ -20,9 +20,8 @@ namespace Wrox.ProCSharp.Delegates
 
             foreach (var employee in employees)
             {
-                WriteLine(employee);
+                Console.WriteLine(employee);
             }
-
         }
     }
 }

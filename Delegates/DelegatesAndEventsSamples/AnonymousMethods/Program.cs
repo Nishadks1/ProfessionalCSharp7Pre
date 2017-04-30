@@ -1,5 +1,4 @@
 ﻿using System;
-using static System.Console;
 
 namespace Wrox.ProCSharp.Delegates
 {
@@ -15,7 +14,7 @@ namespace Wrox.ProCSharp.Delegates
                 param += " and this was added to the string.";
                 return param;
             };
-            WriteLine(anonDel("Start of string"));
+            Console.WriteLine(anonDel("Start of string"));
 
         }
     }

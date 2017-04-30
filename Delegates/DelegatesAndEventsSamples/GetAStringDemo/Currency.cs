@@ -1,16 +1,14 @@
-﻿using System;
-
-namespace GetAStringDemo
+﻿namespace GetAStringDemo
 {
-  struct Currency
+    struct Currency
   {
     public uint Dollars;
     public ushort Cents;
 
     public Currency(uint dollars, ushort cents)
     {
-      this.Dollars = dollars;
-      this.Cents = cents;
+      Dollars = dollars;
+      Cents = cents;
     }
 
     //public override string ToString()
@@ -44,5 +42,4 @@ namespace GetAStringDemo
     public static implicit operator uint (Currency value) => 
       value.Dollars;
   }
-
 }

@@ -1,4 +1,4 @@
-﻿using static System.Console;
+﻿using System;
 
 namespace Wrox.ProCSharp.Delegates
 {
@@ -6,14 +6,10 @@ namespace Wrox.ProCSharp.Delegates
   {
     private string _name;
 
-    public Consumer(string name)
-    {
-      _name = name;
-    }
+    public Consumer(string name) => _name = name;
 
-    public void NewCarIsHere(object sender, CarInfoEventArgs e)
-    {
-      WriteLine($"{_name}: car {e.Car} is new");
-    }
+    public void NewCarIsHere(object sender, CarInfoEventArgs e) => 
+      Console.WriteLine($"{_name}: car {e.Car} is new");
+
   }
 }

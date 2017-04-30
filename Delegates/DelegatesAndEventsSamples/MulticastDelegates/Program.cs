@@ -1,5 +1,4 @@
 ﻿using System;
-using static System.Console;
 
 namespace MulticastDelegates
 {
@@ -13,16 +12,15 @@ namespace MulticastDelegates
       ProcessAndDisplayNumber(operations, 2.0);
       ProcessAndDisplayNumber(operations, 7.94);
       ProcessAndDisplayNumber(operations, 1.414);
-      WriteLine();
+      Console.WriteLine();
 
     }
 
     static void ProcessAndDisplayNumber(Action<double> action, double value)
     {
-      WriteLine();
-      WriteLine($"ProcessAndDisplayNumber called with value = {value}");
+      Console.WriteLine();
+      Console.WriteLine($"ProcessAndDisplayNumber called with value = {value}");
       action(value);
     }
-
   }
 }

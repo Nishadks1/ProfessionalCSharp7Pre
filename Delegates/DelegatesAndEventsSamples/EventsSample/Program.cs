@@ -18,7 +18,6 @@
 
       dealer.NewCarInfo -= sebastian.NewCarIsHere;
 
-
       dealer.NewCar("Red Bull Racing");
     }
   }
