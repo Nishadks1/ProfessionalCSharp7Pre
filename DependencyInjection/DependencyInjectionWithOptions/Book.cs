@@ -1,4 +1,8 @@
-﻿namespace SimpleDI
+﻿using System;
+using System.Collections.Generic;
+using System.Text;
+
+namespace DependencyInjectionWithOptions
 {
     public class Book
     {

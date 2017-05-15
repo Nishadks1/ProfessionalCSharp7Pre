@@ -1,4 +1,4 @@
-﻿namespace SimpleDI
+﻿namespace DependencyInjectionWithContainer
 {
     public class Book
     {

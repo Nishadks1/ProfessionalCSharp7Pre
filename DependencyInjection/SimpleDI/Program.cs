@@ -1,6 +1,4 @@
-﻿using System;
-
-namespace SimpleDI
+﻿namespace SimpleDI
 {
     class Program
     {

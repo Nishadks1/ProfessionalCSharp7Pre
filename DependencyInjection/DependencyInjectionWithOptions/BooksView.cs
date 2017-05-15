@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Threading.Tasks;
 
-namespace SimpleDI
+namespace DependencyInjectionWithOptions
 {
     public class BooksView
     {
