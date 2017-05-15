@@ -1,12 +1,14 @@
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 15
-VisualStudioVersion = 15.0.26403.7
+VisualStudioVersion = 15.0.26510.0
 MinimumVisualStudioVersion = 15.0.26124.0
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SimpleDI", "SimpleDI\SimpleDI.csproj", "{E8034113-C978-4EA5-A964-B48593071DFC}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DependencyInjectionWithOptions", "DependencyInjectionWithOptions\DependencyInjectionWithOptions.csproj", "{2B32EFE9-F160-472A-9CB2-9DA5D2164A27}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DependencyInjectionWithOptions", "DependencyInjectionWithOptions\DependencyInjectionWithOptions.csproj", "{2B32EFE9-F160-472A-9CB2-9DA5D2164A27}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DependencyInjectionWithContainer", "DependencyInjectionWithContainer\DependencyInjectionWithContainer.csproj", "{0B0C7F66-0826-475E-913D-9CE823DFDA40}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DependencyInjectionWithContainer", "DependencyInjectionWithContainer\DependencyInjectionWithContainer.csproj", "{0B0C7F66-0826-475E-913D-9CE823DFDA40}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DependencyInjectionWithConfiguration", "DependencyInjectionWithConfiguration\DependencyInjectionWithConfiguration.csproj", "{DA69FF28-F70E-4F30-96BF-0C58B89F28B9}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -54,6 +56,18 @@ Global
 		{0B0C7F66-0826-475E-913D-9CE823DFDA40}.Release|x64.Build.0 = Release|Any CPU
 		{0B0C7F66-0826-475E-913D-9CE823DFDA40}.Release|x86.ActiveCfg = Release|Any CPU
 		{0B0C7F66-0826-475E-913D-9CE823DFDA40}.Release|x86.Build.0 = Release|Any CPU
+		{DA69FF28-F70E-4F30-96BF-0C58B89F28B9}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{DA69FF28-F70E-4F30-96BF-0C58B89F28B9}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{DA69FF28-F70E-4F30-96BF-0C58B89F28B9}.Debug|x64.ActiveCfg = Debug|Any CPU
+		{DA69FF28-F70E-4F30-96BF-0C58B89F28B9}.Debug|x64.Build.0 = Debug|Any CPU
+		{DA69FF28-F70E-4F30-96BF-0C58B89F28B9}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{DA69FF28-F70E-4F30-96BF-0C58B89F28B9}.Debug|x86.Build.0 = Debug|Any CPU
+		{DA69FF28-F70E-4F30-96BF-0C58B89F28B9}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{DA69FF28-F70E-4F30-96BF-0C58B89F28B9}.Release|Any CPU.Build.0 = Release|Any CPU
+		{DA69FF28-F70E-4F30-96BF-0C58B89F28B9}.Release|x64.ActiveCfg = Release|Any CPU
+		{DA69FF28-F70E-4F30-96BF-0C58B89F28B9}.Release|x64.Build.0 = Release|Any CPU
+		{DA69FF28-F70E-4F30-96BF-0C58B89F28B9}.Release|x86.ActiveCfg = Release|Any CPU
+		{DA69FF28-F70E-4F30-96BF-0C58B89F28B9}.Release|x86.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
