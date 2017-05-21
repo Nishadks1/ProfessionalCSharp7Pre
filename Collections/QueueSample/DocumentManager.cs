@@ -4,7 +4,7 @@ namespace QueueSample
 {
   public class DocumentManager
   {
-    private object sync = new object();
+    private readonly object sync = new object();
 
     private readonly Queue<Document> _documentQueue = new Queue<Document>();
 

@@ -1,7 +1,5 @@
 ﻿using System;
 using System.Threading.Tasks;
-using static System.Console;
-
 namespace QueueSample
 {
   public class ProcessDocuments
@@ -27,7 +25,7 @@ namespace QueueSample
         if (_documentManager.IsDocumentAvailable)
         {
           Document doc = _documentManager.GetDocument();
-          WriteLine("Processing document {0}", doc.Title);
+          Console.WriteLine($"Processing document {doc.Title}");
         }
         await Task.Delay(new Random().Next(20));
       }

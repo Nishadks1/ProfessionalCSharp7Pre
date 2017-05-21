@@ -1,5 +1,5 @@
-﻿using System.Collections.Generic;
-using static System.Console;
+﻿using System;
+using System.Collections.Generic;
 
 namespace ListSamples
 {
@@ -28,12 +28,12 @@ namespace ListSamples
 
             for (int i = 0; i < racers.Count; i++)
             {
-                WriteLine(racers[i]);
+                Console.WriteLine(racers[i]);
             }
 
             foreach (var r in racers)
             {
-                WriteLine(r);
+                Console.WriteLine(r);
             }
 
             // searching
@@ -44,17 +44,17 @@ namespace ListSamples
             List<Racer> bigWinners = racers.FindAll(r => r.Wins > 20);
             foreach (Racer r in bigWinners)
             {
-                WriteLine($"{r:A}");
+                Console. WriteLine($"{r:A}");
             }
 
-            WriteLine();
+            Console.WriteLine();
 
 
             // remove elements
 
             if (!racers.Remove(graham))
             {
-                WriteLine("object not found in collection");
+                Console.WriteLine("object not found in collection");
             }
 
 

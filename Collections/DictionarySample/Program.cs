@@ -49,11 +49,9 @@ namespace Wrox.ProCSharp.Collections
                 {
                     id = new EmployeeId(userInput);
 
-
-                    Employee employee;
-                    if (!employees.TryGetValue(id, out employee))
+                    if (!employees.TryGetValue(id, out Employee employee))
                     {
-                        WriteLine("Employee with id {0} does not exist", id);
+                        WriteLine($"Employee with id {id} does not exist");
                     }
                     else
                     {
@@ -65,7 +63,6 @@ namespace Wrox.ProCSharp.Collections
                     WriteLine(ex.Message);
                 }
             }
-
         }
     }
 }

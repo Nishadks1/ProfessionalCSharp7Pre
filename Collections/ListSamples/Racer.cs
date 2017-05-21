@@ -18,9 +18,9 @@ namespace ListSamples
         { }
 
         public int Id { get; }
-        public string FirstName { get; set; }
-        public string LastName { get; set; }
-        public string Country { get; set; }
+        public string FirstName { get; }
+        public string LastName { get; }
+        public string Country { get; }
         public int Wins { get; set; }
 
         public override string ToString() => $"{FirstName} {LastName}";

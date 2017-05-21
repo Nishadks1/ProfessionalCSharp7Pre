@@ -24,17 +24,15 @@ namespace LinkedListSample
 
     public void AddDocument(Document d)
     {
-     // Contract.Requires<ArgumentNullException>(d != null, "argument d must not be null");
-      //  if (d == null) throw new ArgumentNullException("d");
+      if (d is null) throw new ArgumentNullException("d");
 
       AddDocumentToPriorityNode(d, d.Priority);
     }
 
     private void AddDocumentToPriorityNode(Document doc, int priority)
     {
-    //   Contract.Requires<ArgumentException>(priority >= 0 && priority < 10, "priority value must be between 0 and 9");
-      //if (priority > 9 || priority < 0)
-      //    throw new ArgumentException("Priority must be between 0 and 9");
+      if (priority > 9 || priority < 0)
+          throw new ArgumentException("Priority must be between 0 and 9");
 
       if (_priorityNodes[priority].Value == null)
       {

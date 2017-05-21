@@ -37,9 +37,6 @@ namespace Wrox.ProCSharp.Collections
                     WriteLine($"{title} not found");
                 }
             }
-
-
-
         }
     }
 }

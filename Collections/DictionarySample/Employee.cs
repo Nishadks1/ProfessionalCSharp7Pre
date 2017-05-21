@@ -4,8 +4,8 @@ namespace Wrox.ProCSharp.Collections
 {
     public class Employee
     {
-        private string _name;
-        private decimal _salary;
+        private readonly string _name;
+        private readonly decimal _salary;
         private readonly EmployeeId _id;
 
         public Employee(EmployeeId id, string name, decimal salary)

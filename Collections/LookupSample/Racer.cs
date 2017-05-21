@@ -6,11 +6,11 @@ namespace LookupSample
   {
     public Racer(int id, string firstName, string lastName, string country, int wins)
     {
-      this.Id = id;
-      this.FirstName = firstName;
-      this.LastName = lastName;
-      this.Country = country;
-      this.Wins = wins;
+      Id = id;
+      FirstName = firstName;
+      LastName = lastName;
+      Country = country;
+      Wins = wins;
     }
 
     public Racer(int id, string firstName, string lastName, string country)
@@ -18,9 +18,9 @@ namespace LookupSample
     { }
 
     public int Id { get; }
-    public string FirstName { get; set; }
-    public string LastName { get; set; }
-    public string Country { get; set; }
+    public string FirstName { get; }
+    public string LastName { get; }
+    public string Country { get; }
     public int Wins { get; set; }
 
     public override string ToString() => $"{FirstName} {LastName}";

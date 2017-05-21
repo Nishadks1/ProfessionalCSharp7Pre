@@ -41,5 +41,4 @@ namespace Wrox.ProCSharp.Collections
 
         public static bool operator !=(EmployeeId left, EmployeeId right) => !(left == right);
     }
-
 }
