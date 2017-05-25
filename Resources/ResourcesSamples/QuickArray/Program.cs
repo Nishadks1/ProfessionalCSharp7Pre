@@ -1,4 +1,4 @@
-﻿using static System.Console;
+﻿using System;
 
 namespace QuickArray
 {
@@ -6,8 +6,8 @@ namespace QuickArray
     {
         unsafe public static void Main()
         {
-            Write("How big an array do you want? \n> ");
-            string userInput = ReadLine();
+            Console.Write("How big an array do you want? \n> ");
+            string userInput = Console.ReadLine();
             int size = int.Parse(userInput);
 
             long* pArray = stackalloc long[size];
@@ -18,10 +18,10 @@ namespace QuickArray
 
             for (int i = 0; i < size; i++)
             {
-                WriteLine($"Element {i} = {*(pArray + i)}");
+                Console.WriteLine($"Element {i} = {*(pArray + i)}");
             }
 
-            ReadLine();
+            Console.ReadLine();
         }
     }
 }

@@ -1,7 +1,7 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 15
-VisualStudioVersion = 15.0.26014.0
+VisualStudioVersion = 15.0.26510.0
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "PointerPlayground", "PointerPlayground\PointerPlayground.csproj", "{0E49CD52-2514-4B5F-BF99-298BF8E28236}"
 EndProject
@@ -14,6 +14,8 @@ EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "PInvokeSampleLib", "PInvokeSampleLib\PInvokeSampleLib.csproj", "{BA9D6B4B-23EE-4F03-942F-D66AB5796A03}"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DisposableSample", "DisposableSample\DisposableSample.csproj", "{4E3C803F-5EBD-44BD-96F3-886735C2ECD9}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SpanSample", "SpanSample\SpanSample.csproj", "{72C5C27D-0387-48C7-AC02-844CD93F0DD7}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -45,6 +47,10 @@ Global
 		{4E3C803F-5EBD-44BD-96F3-886735C2ECD9}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{4E3C803F-5EBD-44BD-96F3-886735C2ECD9}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{4E3C803F-5EBD-44BD-96F3-886735C2ECD9}.Release|Any CPU.Build.0 = Release|Any CPU
+		{72C5C27D-0387-48C7-AC02-844CD93F0DD7}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{72C5C27D-0387-48C7-AC02-844CD93F0DD7}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{72C5C27D-0387-48C7-AC02-844CD93F0DD7}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{72C5C27D-0387-48C7-AC02-844CD93F0DD7}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

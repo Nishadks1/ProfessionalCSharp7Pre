@@ -1,4 +1,6 @@
-﻿namespace DisposableSample
+﻿using System.Security.Permissions;
+
+namespace DisposableSample
 {
     public class Program
     {

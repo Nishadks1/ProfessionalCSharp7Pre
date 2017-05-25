@@ -1,5 +1,4 @@
 ﻿using System;
-using static System.Console;
 
 namespace DisposableSample
 {
@@ -7,15 +6,13 @@ namespace DisposableSample
     {
         private SomeInnerResource _innerResource;
 
-        public SomeResource()
-        {
+        public SomeResource() =>
             _innerResource = new SomeInnerResource();
-        }
 
         public void Foo()
         {
             if (disposedValue) throw new ObjectDisposedException(nameof(SomeResource));
-            WriteLine($"{nameof(SomeResource)}.{nameof(Foo)}");
+            Console.WriteLine($"{nameof(SomeResource)}.{nameof(Foo)}");
             _innerResource?.Foo();
         }
 

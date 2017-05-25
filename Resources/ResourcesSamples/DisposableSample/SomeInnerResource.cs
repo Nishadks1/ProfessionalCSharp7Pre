@@ -1,19 +1,16 @@
 ﻿using System;
-using static System.Console;
 
 namespace DisposableSample
 {
     public class SomeInnerResource : IDisposable
     {
-        public SomeInnerResource()
-        {
-            WriteLine("simulation to allocate native memory");
-        }
+        public SomeInnerResource() =>
+            Console.WriteLine("simulation to allocate native memory");
 
         public void Foo()
         {
             if (disposedValue) throw new ObjectDisposedException(nameof(SomeInnerResource));
-            WriteLine($"{nameof(SomeInnerResource)}.{nameof(Foo)}");
+            Console.WriteLine($"{nameof(SomeInnerResource)}.{nameof(Foo)}");
         }
 
         private bool disposedValue = false; // To detect redundant calls
@@ -28,7 +25,7 @@ namespace DisposableSample
                 }
 
                 // TODO: free unmanaged resources (unmanaged objects) and override a finalizer below.
-                WriteLine("simulation to release native memory");
+                Console.WriteLine("simulation to release native memory");
                 // TODO: set large fields to null.
 
                 disposedValue = true;

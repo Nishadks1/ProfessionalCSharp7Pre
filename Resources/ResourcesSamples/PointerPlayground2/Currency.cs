@@ -1,9 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
-
-namespace PointerPlayground2
+﻿namespace PointerPlayground2
 {
     internal struct CurrencyStruct
     {
@@ -20,5 +15,4 @@ namespace PointerPlayground2
 
         public override string ToString() => $"$ {Dollars}.{Cents}";
     }
-
 }

@@ -1,6 +1,6 @@
 ﻿using PInvokeSampleLib;
+using System;
 using System.IO;
-using static System.Console;
 
 namespace PInvokeSample
 {
@@ -10,8 +10,7 @@ namespace PInvokeSample
         {
             if (args.Length != 2)
             {
-                WriteLine("usage: PInvokeSample " +
-                  "existingfilename newfilename");
+                Console.WriteLine("usage: PInvokeSamplem existingfilename newfilename");
                 return;
             }
             try
@@ -20,10 +19,8 @@ namespace PInvokeSample
             }
             catch (IOException ex)
             {
-                WriteLine(ex.Message);
+                Console.WriteLine(ex.Message);
             }
         }
-
-
     }
 }
