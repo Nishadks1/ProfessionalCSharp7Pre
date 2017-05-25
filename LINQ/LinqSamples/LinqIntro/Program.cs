@@ -1,7 +1,7 @@
 ﻿using DataLib;
+using System;
 using System.Collections.Generic;
 using System.Linq;
-using static System.Console;
 
 namespace LinqIntro
 {
@@ -23,25 +23,24 @@ namespace LinqIntro
                              orderby n
                              select n;
 
-            WriteLine("First iteration");
+            Console.WriteLine("First iteration");
             foreach (string name in namesWithJ)
             {
-                WriteLine(name);
+                Console.WriteLine(name);
             }
-            WriteLine();
+            Console.WriteLine();
 
             names.Add("John");
             names.Add("Jim");
             names.Add("Jack");
             names.Add("Denny");
 
-            WriteLine("Second iteration");
+            Console.WriteLine("Second iteration");
             foreach (string name in namesWithJ)
             {
-                WriteLine(name);
+                Console.WriteLine(name);
             }
-            WriteLine();
-
+            Console.WriteLine();
         }
 
         static void ExtensionMethods()
@@ -54,9 +53,9 @@ namespace LinqIntro
 
             foreach (Racer r in brazilChampions)
             {
-                WriteLine($"{r:A}");
+                Console.WriteLine($"{r:A}");
             }
-            WriteLine();
+            Console.WriteLine();
         }
 
 
@@ -69,9 +68,9 @@ namespace LinqIntro
 
             foreach (var r in query)
             {
-                WriteLine($"{r:A}");
+                Console.WriteLine($"{r:A}");
             }
-            WriteLine();
+            Console.WriteLine();
         }
     }
 }

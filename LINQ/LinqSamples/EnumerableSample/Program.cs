@@ -617,13 +617,26 @@ namespace EnumerableSample
                                  from c in r.Cars
                                  where c == "Ferrari"
                                  orderby r.LastName
-                                 select r.FirstName + " " + r.LastName;
+                                 select $"{r.FirstName} {r.LastName}";
 
             foreach (var racer in ferrariDrivers)
             {
                 WriteLine(racer);
             }
+        }
 
+        static void CompoundFromMethods()
+        {
+            var ferrariDrivers = Formula1.GetChampions()
+                .SelectMany(r => r.Cars, (r1, cars) => new { Racer1 = r1, Cars1 = cars })
+                .Where(item => item.Cars1.Contains("Ferrari"))
+                .OrderBy(item => item.Racer1.LastName)
+                .Select(item => $"{item.Racer1.FirstName} {item.Racer1.LastName}");
+
+            foreach (var racer in ferrariDrivers)
+            {
+                WriteLine(racer);
+            }
         }
 
         static void TypeFiltering()
@@ -647,12 +660,22 @@ namespace EnumerableSample
             }
         }
 
-
         static void Filtering()
         {
             var racers = from r in Formula1.GetChampions()
                          where r.Wins > 15 && (r.Country == "Brazil" || r.Country == "Austria")
                          select r;
+
+            foreach (var r in racers)
+            {
+                WriteLine($"{r:A}");
+            }
+        }
+
+        static void FilteringWithMethods()
+        {
+            var racers = Formula1.GetChampions()
+                            .Where(r => r.Wins > 15 && (r.Country == "Brazil" || r.Country == "Austria"));
 
             foreach (var r in racers)
             {

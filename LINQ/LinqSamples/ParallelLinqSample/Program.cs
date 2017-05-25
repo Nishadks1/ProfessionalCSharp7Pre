@@ -4,11 +4,10 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
-using static System.Console;
 
 namespace ParallelLinqSample
 {
-    public class Program
+    class Program
     {
         public static void Main()
         {
@@ -21,39 +20,39 @@ namespace ParallelLinqSample
 
         private static void LinqQuery(IEnumerable<int> data)
         {
-            WriteLine(nameof(LinqQuery));
+            Console.WriteLine(nameof(LinqQuery));
             var res = (from x in data.AsParallel()
                        where Math.Log(x) < 4
                        select x).Average();
-            WriteLine($"result from {nameof(LinqQuery)}: {res}");
-            WriteLine();
+            Console.WriteLine($"result from {nameof(LinqQuery)}: {res}");
+            Console.WriteLine();
         }
 
         private static void ExtensionMethods(IEnumerable<int> data)
         {
-            WriteLine(nameof(ExtensionMethods));
+            Console.WriteLine(nameof(ExtensionMethods));
             var res = data.AsParallel()
                 .Where(x => Math.Log(x) < 4)
                 .Select(x => x).Average();
 
-            WriteLine($"result from {nameof(ExtensionMethods)}: {res}");
-            WriteLine();
+            Console.WriteLine($"result from {nameof(ExtensionMethods)}: {res}");
+            Console.WriteLine();
         }
 
         private static void UseAPartitioner(IList<int> data)
         {
-            WriteLine(nameof(UseAPartitioner));
+            Console.WriteLine(nameof(UseAPartitioner));
             var res = (from x in Partitioner.Create(data, loadBalance: true).AsParallel()
                        where Math.Log(x) < 4
                        select x).Average();
 
-            WriteLine($"result from {nameof(UseAPartitioner)}: {res}");
-            WriteLine();
+            Console.WriteLine($"result from {nameof(UseAPartitioner)}: {res}");
+            Console.WriteLine();
         }
 
         private static void UseCancellation(IEnumerable<int> data)
         {
-            WriteLine(nameof(UseCancellation));
+            Console.WriteLine(nameof(UseCancellation));
             var cts = new CancellationTokenSource();
 
             Task.Run(() =>
@@ -64,23 +63,23 @@ namespace ParallelLinqSample
                                where Math.Log(x) < 4
                                select x).Average();
 
-                    WriteLine($"query finished, sum: {res}");
+                    Console.WriteLine($"query finished, sum: {res}");
                 }
                 catch (OperationCanceledException ex)
                 {
-                    WriteLine(ex.Message);
+                    Console.WriteLine(ex.Message);
                 }
             });
 
-            WriteLine("query started");
-            Write("cancel? ");
-            string input = ReadLine();
+            Console.WriteLine("query started");
+            Console.Write("cancel? ");
+            string input = Console.ReadLine();
             if (input.ToLower().Equals("y"))
             {
                 cts.Cancel();
             }
 
-            WriteLine();
+            Console.WriteLine();
         }
 
         static IList<int> SampleData()
