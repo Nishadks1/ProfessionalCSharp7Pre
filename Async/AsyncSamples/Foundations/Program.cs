@@ -1,8 +1,5 @@
 ﻿using System;
-#if NET46
 using System.Threading;
-using System.Windows.Threading;
-#endif
 using System.Threading.Tasks;
 using static System.Console;
 
@@ -110,7 +107,6 @@ namespace Foundations
 
             var t1 = GreetingAsync("Stephanie");
 
-
             t1.ContinueWith(t =>
             {
                 string result = t.Result;
@@ -119,8 +115,6 @@ namespace Foundations
                 TraceThreadAndTask("finished CallerWithContinuationTask");
             });
         }
-
-
 
         private static void CallerWithAwaiter()
         {
@@ -163,25 +157,18 @@ namespace Foundations
 
         private static Func<string, string> greetingInvoker = Greeting;
 
-        static IAsyncResult BeginGreeting(string name, AsyncCallback callback, object state)
-        {
-            return greetingInvoker.BeginInvoke(name, callback, state);
-        }
+        static IAsyncResult BeginGreeting(string name, AsyncCallback callback, object state) =>
+            greetingInvoker.BeginInvoke(name, callback, state);
 
-        static string EndGreeting(IAsyncResult ar)
-        {
-            return greetingInvoker.EndInvoke(ar);
-        }
+
+        static string EndGreeting(IAsyncResult ar) =>
+            greetingInvoker.EndInvoke(ar);
 
         public static void TraceThreadAndTask(string info)
         {
             string taskInfo = Task.CurrentId == null ? "no task" : "task " + Task.CurrentId;
-#if NET46
-            WriteLine($"{info} in thread {Thread.CurrentThread.ManagedThreadId} and {taskInfo}");
-#else
-            WriteLine($"{info} in {taskInfo}");
-#endif
-        }
 
+            WriteLine($"{info} in thread {Thread.CurrentThread.ManagedThreadId} and {taskInfo}");
+        }
     }
 }
