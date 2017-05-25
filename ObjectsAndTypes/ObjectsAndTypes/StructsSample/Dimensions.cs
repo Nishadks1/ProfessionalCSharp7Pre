@@ -4,8 +4,8 @@ namespace StructsSample
 {
     public struct Dimensions
     {
-        public double Length { get; set;  }
-        public double Width { get; set;  }
+        public double Length { get;  }
+        public double Width { get; }
 
         public Dimensions(double length, double width)
         {
@@ -14,6 +14,5 @@ namespace StructsSample
         }
 
         public double Diagonal => Math.Sqrt(Length * Length + Width * Width);
-
     }
 }

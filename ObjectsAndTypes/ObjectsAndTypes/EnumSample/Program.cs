@@ -1,5 +1,4 @@
 ﻿using System;
-using static System.Console;
 
 namespace EnumSample
 {
@@ -7,12 +6,11 @@ namespace EnumSample
     {
         static void Main()
         {
-
             DaysOfWeekSamples();
             ColorSamples();
             UsingEnumClass();
 
-            ReadLine();
+            Console.ReadLine();
         }
 
         private static void UsingEnumClass()
@@ -20,49 +18,47 @@ namespace EnumSample
             Color red;
             if (Enum.TryParse<Color>("Red", out red))
             {
-                WriteLine($"successfully parsed {red}");
+                Console.WriteLine($"successfully parsed {red}");
             }
 
             string redtext = Enum.GetName(typeof(Color), red);
-            WriteLine(redtext);
+            Console.WriteLine(redtext);
 
             foreach (var day in Enum.GetNames(typeof(Color)))
             {
-                WriteLine(day);
+                Console.WriteLine(day);
             }
 
 
             foreach (short val in Enum.GetValues(typeof(Color)))
             {
-                WriteLine(val);
+                Console.WriteLine(val);
             }
 
             foreach (var item in Enum.GetValues(typeof(Color)))
             {
-                WriteLine(item);
+                Console.WriteLine(item);
             }
-
         }
 
         private static void DaysOfWeekSamples()
         {
             DaysOfWeek mondayAndWednesday = DaysOfWeek.Monday | DaysOfWeek.Wednesday;
-            WriteLine(mondayAndWednesday);
+            Console.WriteLine(mondayAndWednesday);
             DaysOfWeek weekend = DaysOfWeek.Saturday | DaysOfWeek.Sunday;
-            WriteLine(weekend);
+            Console.WriteLine(weekend);
             DaysOfWeek workday = DaysOfWeek.Monday | DaysOfWeek.Tuesday | DaysOfWeek.Wednesday | DaysOfWeek.Thursday  | DaysOfWeek.Friday;
-            WriteLine(workday);
+            Console.WriteLine(workday);
         }
 
         private static void ColorSamples()
         {
-
             Color c1 = Color.Red;
-            WriteLine(c1);
+            Console.WriteLine(c1);
 
             Color c2 = (Color)2;
-            WriteLine(c2);
-            WriteLine((short)c2);
+            Console.WriteLine(c2);
+            Console.WriteLine((short)c2);
         }
     }
 }

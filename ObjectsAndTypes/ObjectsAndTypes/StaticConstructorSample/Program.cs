@@ -1,4 +1,4 @@
-﻿using static System.Console;
+﻿using System;
 
 namespace StaticConstructorSample
 {
@@ -6,8 +6,7 @@ namespace StaticConstructorSample
     {
         static void Main()
         {
-            WriteLine($"User-preferences: BackColor is: {UserPreferences.BackColor}");
-
+            Console.WriteLine($"User-preferences: BackColor is: {UserPreferences.BackColor}");
         }
     }
 }

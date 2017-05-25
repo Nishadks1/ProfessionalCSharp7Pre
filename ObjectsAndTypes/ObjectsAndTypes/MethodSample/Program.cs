@@ -1,5 +1,4 @@
-﻿
-using static System.Console;
+﻿using System;
 
 namespace Wrox
 {
@@ -8,19 +7,19 @@ namespace Wrox
         static void Main()
         {
             // Try calling some static functions.
-            WriteLine($"Pi is {Math.GetPi()}");
+            Console.WriteLine($"Pi is {Math.GetPi()}");
             int x = Math.GetSquareOf(5);
-            WriteLine($"Square of 5 is {x}");
+            Console.WriteLine($"Square of 5 is {x}");
 
             // Instantiate a Math object
             var math = new Math();   // instantiate a reference type
 
             // Call instance members
             math.Value = 30;
-            WriteLine($"Value field of math variable contains {math.Value}");
-            WriteLine($"Square of 30 is {math.GetSquare()}");
+            Console.WriteLine($"Value field of math variable contains {math.Value}");
+            Console.WriteLine($"Square of 30 is {math.GetSquare()}");
 
-            ReadLine();
+            Console.ReadLine();
         }
     }
 }

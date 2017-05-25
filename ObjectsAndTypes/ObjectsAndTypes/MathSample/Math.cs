@@ -1,9 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
-
-namespace MathSample
+﻿namespace MathSample
 {
     public class Math
     {
@@ -14,7 +9,5 @@ namespace MathSample
         public static int GetSquareOf(int x) => x * x;
 
         public static double GetPi() => 3.14159;
-
     }
-
 }

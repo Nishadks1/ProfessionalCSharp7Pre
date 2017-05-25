@@ -1,4 +1,4 @@
-﻿using static System.Console;
+﻿using System;
 
 namespace StructsSample
 {
@@ -6,11 +6,9 @@ namespace StructsSample
     {
         static void Main()
         {
-            var point = new Dimensions();
-            point.Length = 3;
-            point.Width = 6;
+            var point = new Dimensions(3, 6);
 
-            ReadLine();
+            Console.ReadLine();
         }
     }
 }

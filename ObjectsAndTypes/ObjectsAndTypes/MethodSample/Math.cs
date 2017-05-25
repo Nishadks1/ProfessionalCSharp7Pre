@@ -10,6 +10,5 @@ namespace Wrox
         public static int GetSquareOf(int x) => x * x;
 
         public static double GetPi() => 3.14159;
-
     }
 }

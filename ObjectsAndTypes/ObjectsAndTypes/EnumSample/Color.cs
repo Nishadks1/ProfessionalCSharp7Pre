@@ -1,6 +1,4 @@
-﻿using System;
-
-namespace EnumSample
+﻿namespace EnumSample
 {
     public enum Color : short
     {

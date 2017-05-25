@@ -1,5 +1,5 @@
 ﻿using System.Runtime.CompilerServices;
-using static System.Console;
+using System;
 
 namespace PassingByValueAndReference
 {
@@ -17,11 +17,10 @@ namespace PassingByValueAndReference
 
         static void Main()
         {
-
             A a1 = new A { X = 1 };
             ChangeA(a1);
-            WriteLine($"a1.X: {a1.X}");
-            ReadLine();
+            Console.WriteLine($"a1.X: {a1.X}");
+            Console.ReadLine();
         }
     }
 }

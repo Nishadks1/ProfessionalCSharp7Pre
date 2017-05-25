@@ -1,4 +1,4 @@
-﻿using static System.Console;
+﻿using System;
 
 namespace OutKeywordSample
 {
@@ -12,22 +12,28 @@ namespace OutKeywordSample
 
             
             // version 1
-            string input1 = ReadLine();
+            string input1 = Console.ReadLine();
             int n = int.Parse(input1);
-            WriteLine($"n: {n}");
+            Console.WriteLine($"n: {n}");
 
             // version 2
-            string input2 = ReadLine();
-            int result;
-            if (int.TryParse(input2, out result))
+            string input2 = Console.ReadLine();
+            if (int.TryParse(input2, out int result))
             {
-                WriteLine($"n: {n}");
+                Console.WriteLine($"n: {result}");
             }
             else
             {
-                WriteLine("not a number");
+                Console.WriteLine("not a number");
             }
-            ReadLine();
+
+            // version 3
+            string input3 = Console.ReadLine();
+            Console.WriteLine(GetParseResult(input3));
+            Console.ReadLine();
         }
+
+        static string GetParseResult(string input) =>
+            int.TryParse(input, out int result) ? $"n: {result}" : "not a number"; 
     }
 }
