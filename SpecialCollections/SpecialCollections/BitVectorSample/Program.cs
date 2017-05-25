@@ -24,10 +24,10 @@ namespace BitVectorSample
             WriteLine(bits1);
 
             // create a mask using an indexer
-            bits1[0xabcdef] = true;
+            bits1[0xab_cdef] = true;
             WriteLine(bits1);
 
-            int received = 0x79abcdef;
+            int received = 0x79ab_cdef;
 
             BitVector32 bits2 = new BitVector32(received);
             WriteLine(bits2);
@@ -48,7 +48,6 @@ namespace BitVectorSample
             WriteLine($"Section E: {IntToBinaryString(bits2[sectionE], true)}");
             WriteLine($"Section F: {IntToBinaryString(bits2[sectionF], true)}");
 
-
             ReadLine();
         }
 
@@ -58,7 +57,7 @@ namespace BitVectorSample
 
             for (int i = 0; i < 32; i++)
             {
-                if ((bits & 0x80000000) != 0)
+                if ((bits & 0x8000_0000) != 0)
                 {
                     sb.Append("1");
                 }
@@ -79,6 +78,5 @@ namespace BitVectorSample
                 return s;
             }
         }
-
     }
 }

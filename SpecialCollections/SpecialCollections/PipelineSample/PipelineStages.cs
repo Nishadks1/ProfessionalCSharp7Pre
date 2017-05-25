@@ -63,10 +63,9 @@ namespace PipelineSample
             {
                 foreach (var word in input.Keys)
                 {
-                    int value;
-                    if (input.TryGetValue(word, out value))
+                    if (input.TryGetValue(word, out int value))
                     {
-                        var info = new Info { Word = word, Count = value };
+                        var info = new Info(word, value);
                         output.Add(info);
                         ColoredConsole.WriteLine($"stage 4: added {info}");
                     }

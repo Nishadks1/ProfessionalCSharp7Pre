@@ -1,6 +1,6 @@
-﻿using System.Collections.Concurrent;
+﻿using System;
+using System.Collections.Concurrent;
 using System.Threading.Tasks;
-using static System.Console;
 
 namespace PipelineSample
 {
@@ -9,7 +9,7 @@ namespace PipelineSample
         static void Main()
         {
             StartPipelineAsync().Wait();
-            ReadLine();
+            Console.ReadLine();
         }
 
         public static async Task StartPipelineAsync()
@@ -34,6 +34,5 @@ namespace PipelineSample
             await Task.WhenAll(t4, t5, t6);
             ColoredConsole.WriteLine("all stages finished");
         }
-
     }
 }

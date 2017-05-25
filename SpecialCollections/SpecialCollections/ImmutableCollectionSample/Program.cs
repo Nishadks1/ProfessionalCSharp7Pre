@@ -1,7 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Collections.Immutable;
-using static System.Console;
 using System.Linq;
 
 namespace ImmutableCollectionSample
@@ -15,7 +14,7 @@ namespace ImmutableCollectionSample
             UsingABuilder(accounts);
             LinqDemo();
 
-            ReadLine();
+            Console.ReadLine();
         }
 
         public static void LinqDemo()
@@ -38,7 +37,7 @@ namespace ImmutableCollectionSample
 
             ImmutableList<Account> overdrawnAccounts = builder.ToImmutable();
 
-            overdrawnAccounts.ForEach(a => WriteLine($"{a.Name} {a.Amount}"));
+            overdrawnAccounts.ForEach(a => Console.WriteLine($"{a.Name} {a.Amount}"));
         }
 
         public static ImmutableList<Account> CreateImmutableList()
@@ -53,10 +52,10 @@ namespace ImmutableCollectionSample
 
             foreach (var account in immutableAccounts)
             {
-                WriteLine($"{account.Name} {account.Amount}");
+                Console.WriteLine($"{account.Name} {account.Amount}");
             }
 
-            immutableAccounts.ForEach(a => WriteLine($"{a.Name} {a.Amount}"));
+            immutableAccounts.ForEach(a => Console.WriteLine($"{a.Name} {a.Amount}"));
 
             return immutableAccounts;
         }

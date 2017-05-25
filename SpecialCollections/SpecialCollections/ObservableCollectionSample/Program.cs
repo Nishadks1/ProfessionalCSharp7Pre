@@ -1,6 +1,6 @@
-﻿using System.Collections.ObjectModel;
+﻿using System;
+using System.Collections.ObjectModel;
 using System.Collections.Specialized;
-using static System.Console;
 
 namespace ObservableCollectionSample
 {
@@ -18,32 +18,32 @@ namespace ObservableCollectionSample
 
             data.CollectionChanged -= Data_CollectionChanged;
 
-            ReadLine();
+            Console.ReadLine();
         }
 
         public static void Data_CollectionChanged(object sender, NotifyCollectionChangedEventArgs e)
         {
-            WriteLine($"action: {e.Action.ToString()}");
+            Console.WriteLine($"action: {e.Action.ToString()}");
 
             if (e.OldItems != null)
             {
-                WriteLine($"starting index for old item(s): {e.OldStartingIndex}");
-                WriteLine("old item(s):");
+                Console.WriteLine($"starting index for old item(s): {e.OldStartingIndex}");
+                Console.WriteLine("old item(s):");
                 foreach (var item in e.OldItems)
                 {
-                    WriteLine(item);
+                    Console.WriteLine(item);
                 }
             }
             if (e.NewItems != null)
             {
-                WriteLine($"starting index for new item(s): {e.NewStartingIndex}");
-                WriteLine("new item(s): ");
+                Console.WriteLine($"starting index for new item(s): {e.NewStartingIndex}");
+                Console.WriteLine("new item(s): ");
                 foreach (var item in e.NewItems)
                 {
-                    WriteLine(item);
+                    Console.WriteLine(item);
                 }
             }
-            WriteLine();
+            Console.WriteLine();
         }
     }
 }
