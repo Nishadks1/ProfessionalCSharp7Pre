@@ -1,7 +1,7 @@
 ﻿
 namespace Wrox.ProCSharp.Generics
 {
-  public class Rectangle : Shape
-  {
-  }
+    public class Rectangle : Shape
+    {
+    }
 }

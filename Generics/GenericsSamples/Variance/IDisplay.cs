@@ -1,8 +1,8 @@
 ﻿namespace Wrox.ProCSharp.Generics
 {
-  // contra-variant
-  public interface IDisplay<in T>
-  {
-    void Show(T item);
-  }
+    // contra-variant
+    public interface IDisplay<in T>
+    {
+        void Show(T item);
+    }
 }
