@@ -48,7 +48,6 @@ namespace SigningDemo
                 signingAlg.Clear();
 #else
                 signature = signingAlg.SignData(data, HashAlgorithmName.SHA512);
-
 #endif
             }
             return signature;

@@ -14,7 +14,6 @@ namespace WindowsPrincipalSample
             WindowsPrincipal principal = ShowPrincipal(identity);
 
             ShowClaims(principal.Claims);
-
         }
 
         public static WindowsIdentity ShowIdentityInformation()
@@ -69,7 +68,6 @@ namespace WindowsPrincipalSample
                     WriteLine($"\tProperty: {prop.Key} {prop.Value}");
                 }
                 WriteLine();
-
             }
         }
     }
