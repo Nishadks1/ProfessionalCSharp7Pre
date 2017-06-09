@@ -1,5 +1,5 @@
-﻿using System.Collections;
-using static System.Console;
+﻿using System;
+using System.Collections;
 
 namespace Wrox.ProCSharp.Arrays
 {
@@ -21,7 +21,7 @@ namespace Wrox.ProCSharp.Arrays
         {
             while (true)
             {
-                WriteLine($"Cross, move {_move}");
+                Console.WriteLine($"Cross, move {_move}");
                 if (++_move >= MaxMoves)
                     yield break;
                 yield return _circle;
@@ -32,12 +32,11 @@ namespace Wrox.ProCSharp.Arrays
         {
             while (true)
             {
-                WriteLine("Circle, move {0}", _move);
+                Console.WriteLine($"Circle, move {_move}");
                 if (++_move >= MaxMoves)
                     yield break;
                 yield return _cross;
             }
         }
     }
-
 }

@@ -1,5 +1,4 @@
 ﻿using System;
-using static System.Console;
 
 namespace Wrox.ProCSharp.Arrays
 {
@@ -8,10 +7,10 @@ namespace Wrox.ProCSharp.Arrays
         static void Main()
         {
             SortNames();
-            WriteLine();
+            Console.WriteLine();
             Person[] persons = GetPersons();
             SortPersons(persons);
-            WriteLine();
+            Console.WriteLine();
             SortUsingPersonComparer(persons);
         }
 
@@ -23,7 +22,7 @@ namespace Wrox.ProCSharp.Arrays
 
             foreach (Person p in persons)
             {
-                WriteLine(p);
+                Console.WriteLine(p);
             }
         }
 
@@ -42,7 +41,7 @@ namespace Wrox.ProCSharp.Arrays
             Array.Sort(persons);
             foreach (Person p in persons)
             {
-                WriteLine(p);
+                Console.WriteLine(p);
             }
         }
 
@@ -59,7 +58,7 @@ namespace Wrox.ProCSharp.Arrays
 
             foreach (string name in names)
             {
-                WriteLine(name);
+                Console.WriteLine(name);
             }
         }
     }

@@ -1,7 +1,6 @@
 ﻿using System;
 using System.Collections;
 using System.Collections.Generic;
-using static System.Console;
 
 namespace Wrox.ProCSharp.Arrays
 {
@@ -35,21 +34,21 @@ namespace Wrox.ProCSharp.Arrays
             var titles = new MusicTitles();
             foreach (var title in titles)
             {
-                WriteLine(title);
+                Console.WriteLine(title);
             }
-            WriteLine();
+            Console.WriteLine();
 
-            WriteLine("reverse");
+            Console.WriteLine("reverse");
             foreach (var title in titles.Reverse())
             {
-                WriteLine(title);
+                Console.WriteLine(title);
             }
-            WriteLine();
+            Console.WriteLine();
 
-            WriteLine("subset");
+            Console.WriteLine("subset");
             foreach (var title in titles.Subset(2, 2))
             {
-                WriteLine(title);
+                Console.WriteLine(title);
             }
 
         }
@@ -59,7 +58,7 @@ namespace Wrox.ProCSharp.Arrays
             var helloCollection = new HelloCollection();
             foreach (string s in helloCollection)
             {
-                WriteLine(s);
+                Console.WriteLine(s);
             }
         }
     }

@@ -1,5 +1,4 @@
 ﻿using System;
-using static System.Console;
 
 namespace ArraySegmentSample
 {
@@ -15,10 +14,8 @@ namespace ArraySegmentSample
                 new ArraySegment<int>(ar2, 3, 3)
             };
 
-
             var sum = SumOfSegments(segments);
-            WriteLine($"sum of all segments: {sum}");
-
+            Console.WriteLine($"sum of all segments: {sum}");
         }
 
         static int SumOfSegments(ArraySegment<int>[] segments)

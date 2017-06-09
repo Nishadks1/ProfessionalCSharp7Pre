@@ -13,18 +13,15 @@ namespace Wrox.ProCSharp.Arrays
     {
         private PersonCompareType _compareType;
 
-        public PersonComparer(PersonCompareType compareType)
-        {
+        public PersonComparer(PersonCompareType compareType) => 
             _compareType = compareType;
-        }
 
 
         #region IComparer<Person> Members
-
         public int Compare(Person x, Person y)
         {
-            if (x == null) throw new ArgumentNullException("x");
-            if (y == null) throw new ArgumentNullException("y");
+            if (x is null) throw new ArgumentNullException("x");
+            if (y is null) throw new ArgumentNullException("y");
 
             switch (_compareType)
             {
@@ -40,5 +37,4 @@ namespace Wrox.ProCSharp.Arrays
 
         #endregion
     }
-
 }

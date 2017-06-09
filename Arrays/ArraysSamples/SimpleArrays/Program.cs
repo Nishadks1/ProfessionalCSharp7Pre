@@ -1,5 +1,4 @@
 ﻿using System;
-using static System.Console;
 
 namespace Wrox.ProCSharp.Arrays
 {
@@ -14,18 +13,16 @@ namespace Wrox.ProCSharp.Arrays
 
             ArrayClass();
             CopyArrays();
-
         }
 
         static void CopyArrays()
         {
             Person[] beatles = {
-                     new Person { FirstName="John", LastName="Lennon" },
-                     new Person { FirstName="Paul", LastName="McCartney" }
+                     new Person("John", "Lennon"),
+                     new Person("Paul", "McCartney")
                    };
 
             Person[] beatlesClone = (Person[])beatles.Clone();
-
         }
 
         static void ArrayClass()
@@ -33,33 +30,28 @@ namespace Wrox.ProCSharp.Arrays
             Array intArray1 = Array.CreateInstance(typeof(int), 5);
             for (int i = 0; i < 5; i++)
             {
+
                 intArray1.SetValue(33, i);
             }
-
             for (int i = 0; i < 5; i++)
             {
-                WriteLine(intArray1.GetValue(i));
+                Console.WriteLine(intArray1.GetValue(i));
             }
 
             int[] lengths = { 2, 3 };
             int[] lowerBounds = { 1, 10 };
             Array racers = Array.CreateInstance(typeof(Person), lengths, lowerBounds);
-            racers.SetValue(new Person { FirstName = "Alain", LastName = "Prost" }, 1, 10);
-            racers.SetValue(new Person
-            {
-                FirstName = "Emerson",
-                LastName = "Fittipaldi"
-            }, 1, 11);
-            racers.SetValue(new Person { FirstName = "Ayrton", LastName = "Senna" }, 1, 12);
-            racers.SetValue(new Person { FirstName = "Michael", LastName = "Schumacher" }, 2, 10);
-            racers.SetValue(new Person { FirstName = "Fernando", LastName = "Alonso" }, 2, 11);
-            racers.SetValue(new Person { FirstName = "Jenson", LastName = "Button" }, 2, 12);
+            racers.SetValue(new Person("Alain", "Prost"), 1, 10);
+            racers.SetValue(new Person("Emerson", "Fittipaldi"), 1, 11);
+
+            racers.SetValue(new Person("Ayrton", "Senna"), 1, 12);
+            racers.SetValue(new Person("Michael", "Schumacher"), 2, 10);
+            racers.SetValue(new Person("Fernando", "Alonso"), 2, 11);
+            racers.SetValue(new Person("Jenson", "Button"), 2, 12);
 
             Person[,] racers2 = (Person[,])racers;
             Person first = racers2[1, 10];
             Person last = racers2[2, 12];
-
-
         }
 
         static void Jagged()
@@ -74,7 +66,7 @@ namespace Wrox.ProCSharp.Arrays
                 for (int element = 0;
                    element < jagged[row].Length; element++)
                 {
-                    WriteLine(
+                    Console.WriteLine(
                        $"row: {row}, element: {element}, value: {jagged[row][element]}");
                 }
             }
@@ -88,8 +80,7 @@ namespace Wrox.ProCSharp.Arrays
                     { { 9, 10 }, { 11, 12 } }
                    };
 
-
-            WriteLine(threedim[0, 1, 1]);
+            Console.WriteLine(threedim[0, 1, 1]);
         }
 
         static void TwoDim()
@@ -106,18 +97,17 @@ namespace Wrox.ProCSharp.Arrays
             twodim[2, 2] = 9;
         }
 
-
         static void SimpleArrays()
         {
-            Person[] myPersons = new Person[2];
+            var myPersons = new Person[2];
 
-            myPersons[0] = new Person { FirstName = "Ayrton", LastName = "Senna" };
-            myPersons[1] = new Person { FirstName = "Michael", LastName = "Schumacher" };
+            myPersons[0] = new Person("Ayrton", "Senna");
+            myPersons[1] = new Person("Michael", "Schumacher");
 
             Person[] myPersons2 =
             {
-                new Person { FirstName="Ayrton", LastName="Senna"},
-                new Person { FirstName="Michael", LastName="Schumacher"}
+                new Person("Ayrton", "Senna"),
+                new Person("Michael", "Schumacher")
             };
         }
     }
