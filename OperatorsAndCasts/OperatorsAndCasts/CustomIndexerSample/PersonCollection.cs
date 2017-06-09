@@ -15,8 +15,8 @@ namespace CustomIndexerSample
 
         public Person this[int index]
         {
-            get { return _people[index]; }
-            set { _people[index] = value; }
+            get => _people[index];
+            set => _people[index] = value;
         }
 
         public IEnumerable<Person> this[DateTime birthDay] => _people.Where(p => p.Birthday == birthDay);

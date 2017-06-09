@@ -26,7 +26,4 @@
             new Vector(left.X + right.X, left.Y + right.Y, left.Z + right.Z);
 
     }
-
-
-
 }
