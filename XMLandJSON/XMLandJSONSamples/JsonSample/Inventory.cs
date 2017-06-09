@@ -16,6 +16,4 @@ namespace JsonSample
             return outText.ToString();
         }
     }
-
-
 }

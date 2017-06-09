@@ -48,8 +48,6 @@ namespace JsonSample
             }
         }
 
-
-
         private static void ShowUsage()
         {
             WriteLine("XmlReaderAndWriterSample options");
@@ -60,7 +58,6 @@ namespace JsonSample
             WriteLine($"\t{DeserializeOption}\tDeserialize");
             WriteLine($"\t{ReadOption}\tUse Reader");
         }
-
 
         public static void SerializeJson()
         {
@@ -142,8 +139,6 @@ namespace JsonSample
             json["books"] = books;
             WriteLine(json);
         }
-
-
 
         public static void ReaderSample()
         {
