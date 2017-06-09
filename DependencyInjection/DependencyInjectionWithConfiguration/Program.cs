@@ -23,7 +23,9 @@ namespace DependencyInjectionWithConfiguration
 
             var services = new ServiceCollection();
             services.AddOptions();
+           
             services.AddBooksService(configuration.GetSection("BooksFileService"));
+            
             services.AddTransient<BooksView>();
             Container = services.BuildServiceProvider();
         }
