@@ -112,8 +112,6 @@ namespace ConnectionSamples
 
                 tx.Commit();
             }
-
         }
-
     }
 }
