@@ -3,7 +3,6 @@ using System.IO;
 using System.IO.Pipes;
 using System.Threading;
 using System.Threading.Tasks;
-using static System.Console;
 
 namespace AnonymousPipes
 {
@@ -16,7 +15,7 @@ namespace AnonymousPipes
         {
             var p = new Program();
             p.Run();
-            ReadLine();
+            Console.ReadLine();
         }
 
         public void Run()
@@ -28,14 +27,14 @@ namespace AnonymousPipes
         }
         private void Writer()
         {
-            WriteLine("anonymous pipe writer");
+            Console.WriteLine("anonymous pipe writer");
             _pipeHandleSet.Wait();
 
             var pipeWriter = new AnonymousPipeClientStream(PipeDirection.Out, _pipeHandle);
             using (var writer = new StreamWriter(pipeWriter))
             {
                 writer.AutoFlush = true;
-                WriteLine("starting writer");
+                Console.WriteLine("starting writer");
                 for (int i = 0; i < 5; i++)
                 {
                     writer.WriteLine($"Message {i}");
@@ -49,27 +48,26 @@ namespace AnonymousPipes
         {
             try
             {
-                WriteLine("anonymous pipe reader");
+                Console.WriteLine("anonymous pipe reader");
                 var pipeReader = new AnonymousPipeServerStream(PipeDirection.In, HandleInheritability.None);
                 using (var reader = new StreamReader(pipeReader))
                 {
                     _pipeHandle = pipeReader.GetClientHandleAsString();
-                    WriteLine($"pipe handle: {_pipeHandle}");
+                    Console.WriteLine($"pipe handle: {_pipeHandle}");
                     _pipeHandleSet.Set();
                     bool end = false;
                     while (!end)
                     {
                         string line = reader.ReadLine();
-                        WriteLine(line);
+                        Console.WriteLine(line);
                         if (line == "end") end = true;
                     }
-                    WriteLine("finished reading");
-
+                    Console.WriteLine("finished reading");
                 }
             }
             catch (Exception ex)
             {
-                WriteLine(ex.Message);
+                Console.WriteLine(ex.Message);
             }
         }
     }

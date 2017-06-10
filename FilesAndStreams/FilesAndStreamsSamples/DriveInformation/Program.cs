@@ -1,5 +1,5 @@
-﻿using System.IO;
-using static System.Console;
+﻿using System;
+using System.IO;
 
 namespace DriveInformation
 {
@@ -12,17 +12,16 @@ namespace DriveInformation
             {
                 if (drive.IsReady)
                 {
-                    WriteLine($"Drive name: {drive.Name}");
-                    WriteLine($"Format: {drive.DriveFormat}");
-                    WriteLine($"Type: {drive.DriveType}");
-                    WriteLine($"Root directory: {drive.RootDirectory}");
-                    WriteLine($"Volume label: {drive.VolumeLabel}");
-                    WriteLine($"Free space: {drive.TotalFreeSpace}");
-                    WriteLine($"Available space: {drive.AvailableFreeSpace}");
-                    WriteLine($"Total size: {drive.TotalSize}");
-                    
-                    WriteLine();
-                   
+                    Console.WriteLine($"Drive name: {drive.Name}");
+                    Console.WriteLine($"Format: {drive.DriveFormat}");
+                    Console.WriteLine($"Type: {drive.DriveType}");
+                    Console.WriteLine($"Root directory: {drive.RootDirectory}");
+                    Console.WriteLine($"Volume label: {drive.VolumeLabel}");
+                    Console.WriteLine($"Free space: {drive.TotalFreeSpace}");
+                    Console.WriteLine($"Available space: {drive.AvailableFreeSpace}");
+                    Console.WriteLine($"Total size: {drive.TotalSize}");
+
+                    Console.WriteLine();
                 }
             }
         }

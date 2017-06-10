@@ -21,7 +21,6 @@ namespace PipesWriter
                 // PipesWriter(pipeName);
                 PipesWriter2(pipeName);
             }
-
         }
 
         private static void AnonymousWriter()

@@ -57,8 +57,6 @@ namespace MemoryMappedFilesSample
             WriteLine("tasks started");
         }
 
-
-
         private async Task WriterAsync()
         {
             try

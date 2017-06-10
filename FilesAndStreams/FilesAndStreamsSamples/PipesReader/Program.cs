@@ -41,7 +41,6 @@ namespace PipesReader
         {
             try
             {
-
                 var pipeReader = new NamedPipeServerStream(pipeName, PipeDirection.In);
                 using (var reader = new StreamReader(pipeReader))
                 {
@@ -69,7 +68,6 @@ namespace PipesReader
         {
             try
             {
-
                 using (var pipeReader = new NamedPipeServerStream(pipeName, PipeDirection.In))
                 {
                     pipeReader.WaitForConnection();

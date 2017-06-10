@@ -1,8 +1,8 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using System.IO;
 using System.IO.Compression;
 using System.Text;
-using static System.Console;
 
 namespace CompressFileSample
 {
@@ -67,7 +67,7 @@ namespace CompressFileSample
                 using (var reader = new StreamReader(outputStream, Encoding.UTF8, detectEncodingFromByteOrderMarks: true, bufferSize: 4096, leaveOpen: true))
                 {
                     string result = reader.ReadToEnd();
-                    WriteLine(result);
+                    Console.WriteLine(result);
                 }
             }
         }

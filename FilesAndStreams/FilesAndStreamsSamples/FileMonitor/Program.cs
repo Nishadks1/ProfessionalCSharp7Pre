@@ -1,5 +1,5 @@
-﻿using System.IO;
-using static System.Console;
+﻿using System;
+using System.IO;
 
 namespace FileMonitor
 {
@@ -8,7 +8,7 @@ namespace FileMonitor
         public static void Main(string[] args)
         {
             WatchFiles("c:/test", "*.txt");
-            ReadLine();
+            Console.ReadLine();
         }
 
         public static void WatchFiles(string path, string filter)
@@ -21,20 +21,16 @@ namespace FileMonitor
             watcher.Changed += OnFileChanged;
             watcher.Deleted += OnFileChanged;
             watcher.Renamed += OnFileRenamed;
-           
+
             watcher.EnableRaisingEvents = true;
-            WriteLine("watching file changes...");
+            Console.WriteLine("watching file changes...");
         }
 
 
-        private static void OnFileRenamed(object sender, RenamedEventArgs e)
-        {
-            WriteLine($"file {e.OldName} {e.ChangeType} to {e.Name}");
-        }
+        private static void OnFileRenamed(object sender, RenamedEventArgs e) =>
+            Console.WriteLine($"file {e.OldName} {e.ChangeType} to {e.Name}");
 
-        private static void OnFileChanged(object sender, FileSystemEventArgs e)
-        {
-            WriteLine($"file {e.Name} {e.ChangeType}");
-        }
+        private static void OnFileChanged(object sender, FileSystemEventArgs e) =>
+            Console.WriteLine($"file {e.Name} {e.ChangeType}");
     }
 }
