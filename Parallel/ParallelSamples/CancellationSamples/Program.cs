@@ -53,7 +53,6 @@ namespace CancellationSamples
             }
         }
 
-
         public static void CancelParallelFor()
         {
             var cts = new CancellationTokenSource();
@@ -85,7 +84,6 @@ namespace CancellationSamples
             {
                 WriteLine(ex.Message);
             }
-
         }
     }
 }

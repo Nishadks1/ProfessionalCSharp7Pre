@@ -79,10 +79,8 @@ namespace TaskSamples
             WriteLine("child finished");
         }
 
-
         public static void ContinuationTasks()
-        {
-            
+        {          
             Task t1 = new Task(DoOnFirst);
             Task t2 = t1.ContinueWith(DoOnSecond);
             Task t3 = t1.ContinueWith(DoOnSecond);
@@ -104,31 +102,27 @@ namespace TaskSamples
             Task.Delay(3000).Wait();
         }
 
-
         public static void TaskWithResultDemo()
         {
-            var t1 = new Task<Tuple<int, int>>(TaskWithResult, Tuple.Create(8, 3));
+            var t1 = new Task<(int Result, int Remainder)>(TaskWithResult, (8, 3));
             t1.Start();
             WriteLine(t1.Result);
             t1.Wait();
-            WriteLine($"result from task: {t1.Result.Item1} {t1.Result.Item2}");
+            WriteLine($"result from task: {t1.Result.Result} {t1.Result.Remainder}");
         }
 
-
-        private static Tuple<int, int> TaskWithResult(object division)
+        private static (int Result, int Remainder) TaskWithResult(object division)
         {
-            Tuple<int, int> div = (Tuple<int, int>)division;
-            int result = div.Item1 / div.Item2;
-            int reminder = div.Item1 % div.Item2;
+            (int x, int y) = ((int x, int y))division;
+            int result = x / y;
+            int remainder = x % y;
             WriteLine("task creates a result...");
 
-            return Tuple.Create(result, reminder);
+            return (result, remainder);
         }
-
 
         public static void TasksUsingThreadPool()
         {
-
             var tf = new TaskFactory();
             Task t1 = tf.StartNew(TaskMethod, "using a task factory");
             Task t2 = Task.Factory.StartNew(TaskMethod, "factory via a task");
@@ -151,8 +145,6 @@ namespace TaskSamples
             t1.Start();
         }
 
-
-
         public static void TaskMethod(object o)
         {
             Log(o?.ToString());
@@ -174,6 +166,5 @@ namespace TaskSamples
                 WriteLine();
             }
         }
-
     }
 }
