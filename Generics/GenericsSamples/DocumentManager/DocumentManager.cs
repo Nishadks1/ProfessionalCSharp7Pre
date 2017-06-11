@@ -7,10 +7,11 @@ namespace Wrox.ProCSharp.Generics
         where TDocument : IDocument
     {
         private readonly Queue<TDocument> documentQueue = new Queue<TDocument>();
+        private readonly object lockQueue = new object();
 
         public void AddDocument(TDocument doc)
         {
-            lock (this)
+            lock (lockQueue)
             {
                 documentQueue.Enqueue(doc);
             }
@@ -30,7 +31,7 @@ namespace Wrox.ProCSharp.Generics
         public TDocument GetDocument()
         {
             TDocument doc = default(TDocument);
-            lock (this)
+            lock (lockQueue)
             {
                 doc = documentQueue.Dequeue();
             }

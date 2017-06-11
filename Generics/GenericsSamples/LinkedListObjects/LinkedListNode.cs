@@ -3,10 +3,7 @@ namespace Wrox.ProCSharp.Generics
 {
     public class LinkedListNode
     {
-        public LinkedListNode(object value)
-        {
-            Value = value;
-        }
+        public LinkedListNode(object value) => Value = value;
 
         public object Value { get; }
 
