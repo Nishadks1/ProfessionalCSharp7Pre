@@ -1,5 +1,4 @@
 ﻿using System;
-using static System.Console;
 
 namespace CastingSample
 {
@@ -11,17 +10,17 @@ namespace CastingSample
             {
                 var balance = new Currency(50, 35);
 
-                WriteLine(balance);
-                WriteLine($"balance is {balance}");
+                Console.WriteLine(balance);
+                Console.WriteLine($"balance is {balance}");
 
                 float balance2 = balance;
 
-                WriteLine($"After converting to float, = {balance2}");
+                Console.WriteLine($"After converting to float, = {balance2}");
 
                 balance = (Currency)balance2;
 
-                WriteLine($"After converting back to Currency, = {balance}");
-                WriteLine("Now attempt to convert out of range value of " +
+                Console.WriteLine($"After converting back to Currency, = {balance}");
+                Console.WriteLine("Now attempt to convert out of range value of " +
                                     "-$50.50 to a Currency:");
 
                 // Overflow Exception
@@ -33,14 +32,13 @@ namespace CastingSample
 
                 uint balance3 = (uint)balance2;
 
-                WriteLine($"Converting to uint gives {balance3}");
+                Console.WriteLine($"Converting to uint gives {balance3}");
 
             }
             catch (Exception e)
             {
-                WriteLine($"Exception occurred: {e.Message}");
+                Console.WriteLine($"Exception occurred: {e.Message}");
             }
-
         }
     }
 }

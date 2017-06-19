@@ -8,8 +8,10 @@ This chapter contains the following code samples:
 * CustomIndexerSample (creating a custom indexer)
 * CastingSample (overloading the cast operator)
 
-To build and run the .NET Core samples, please install
-* Visual Studio 2017 with the .NET Core workload
+To build and run the .NET Core samples, please install one of these tools:
+* Visual Studio 2017 Update 3 with the .NET Core workload
+* Visual Studio for Mac
+* Visual Studio Code
 
 Please download and install the tools from [.NET Core downloads](https://www.microsoft.com/net/core#windows).
  
